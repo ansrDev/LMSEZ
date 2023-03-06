@@ -17,8 +17,6 @@ return new class extends Migration
             $table->foreignIdFor(CourseSection::class);
             $table->string('title');
             $table->longText('description');
-            $table->string('file');
-            $table->enum('file_type',['youtube','video','vimeo']);
             $table->timestamps();
         });
     }

@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
-class CourseLearn extends Model
+class Like extends Model
 {
     use HasFactory, HasUlids;
 
-    public function learnable(): MorphTo
+    public function likeable(): MorphTo
     {
         return $this->morphTo();
     }
-    public function likes(): HasMany
+    public function user(): BelongsTo
     {
-        return $this->morphTo();
+        return $this->belongsTo(User::class);
     }
 }

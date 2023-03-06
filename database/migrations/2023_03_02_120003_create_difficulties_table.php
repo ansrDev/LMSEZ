@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('difficulties', function (Blueprint $table) {
             $table->ulid('id');
             $table->string('name');
+            $table->string('slug')->unique();
             $table->integer('level')->default(1);
             $table->timestamps();
         });

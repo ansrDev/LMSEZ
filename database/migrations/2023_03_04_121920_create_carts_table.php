@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('course_learns', function (Blueprint $table) {
-            $table->ulid('id');
-            $table->ulidMorphs('learnable');
-            $table->text('content');
+        Schema::create('carts', function (Blueprint $table) {
+            $table->id();
+            $table->ulidMorphs('cartable');
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('course_learns');
+        Schema::dropIfExists('carts');
     }
 };
