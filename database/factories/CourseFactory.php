@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Difficulty;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title'=>fake()->sentence(2),
+            'description'=>fake()->text(),
+            'price'=>fake()->numberBetween(10000,100000)
         ];
     }
+
 }

@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('course_requirements', function (Blueprint $table) {
             $table->ulid('id');
             $table->foreignIdFor(Course::class);
-            $table->string('content');
+            $table->text('content');
             $table->timestamps();
         });
     }
